@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useRef, useState } from "react";
+import NextLink from "next/link";
 import Toolbar from "@mui/material/Toolbar";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
@@ -53,11 +54,11 @@ const NavNode = ({ item, top = false }: { item: NavigationItem; top?: boolean })
 
 	if (!hasChildren) {
 		return top ? (
-			<Button component="a" href={item.path} sx={{ my: 2, color: 'common.white' }}>
+			<Button component={NextLink} href={item.path ?? '#'} sx={{ my: 2, color: 'common.white' }}>
 				{item.label}
 			</Button>
 		) : (
-			<MenuItem component="a" href={item.path}>
+			<MenuItem component={NextLink} href={item.path ?? '#'}>
 				<ListItemText>{item.label}</ListItemText>
 			</MenuItem>
 		);
@@ -126,7 +127,7 @@ const DesktopHeader = ({ pages }: { pages: NavigationItem[] }) => {
 						</IconButton>
 					</Tooltip>
 					<Tooltip title="Contact Us">
-						<IconButton component="a" href="/contact" sx={{ color: 'common.white' }}>
+						<IconButton component={NextLink} href="/contact" sx={{ color: 'common.white' }}>
 							<PhoneIcon />
 						</IconButton>
 					</Tooltip>
