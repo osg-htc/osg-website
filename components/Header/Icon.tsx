@@ -1,28 +1,14 @@
-import ChtcIconWEBP from "@/public/logos/chtc.webp";
-import ChtcIconPNG from "@/public/logos/chtc.png";
-import React, {CSSProperties} from "react";
+import React, { CSSProperties } from "react";
 
-const Icon = ({size = "50px"}: {size?: CSSProperties['width']}) => {
-
-	const style = {
-		height: "auto",
-		width: '100px',
-	}
-
+const Icon = ({ size = "44px" }: { size?: CSSProperties['height'] }) => {
 	return (
-		<picture>
-			<source
-					srcSet={ChtcIconWEBP.src}
-					type="image/webp"
-					style={style}
-			/>
-			<img
-					src={ChtcIconPNG.src}
-					alt="Badger Hub Icon"
-					style={style}
-			/>
-		</picture>
-	)
-}
+		// eslint-disable-next-line @next/next/no-img-element
+		<img
+			src="/logos/osg.svg"
+			alt="OSG logo"
+			style={{ height: size, width: "auto" }}
+		/>
+	);
+};
 
 export default Icon;

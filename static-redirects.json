@@ -1,0 +1,207 @@
+[
+  {
+    "source": "/register.html",
+    "destination": "https://registry.cilogon.org/registry/co_petitions/start/coef:307",
+    "text": "Click Here to be Redirected to Office Hours!"
+  },
+  { "source": "/voms-retirement/index.html", "destination": "/voms-decomissioned", "text": "VOMS Decommissioned" },
+  { "source": "/about/osdf/deploying_an_osdf_origin.html", "destination": "/about/osdf/deploying_an_osdf_origin", "text": "Deploying an OSDF Origin" },
+  { "source": "/user-stories", "destination": "/spotlights", "text": "Spotlights" },
+  { "source": "/spotlight.html", "destination": "/spotlights", "text": "Spotlights" },
+  { "source": "/spotlights.html", "destination": "/spotlights", "text": "Spotlights" },
+  { "source": "/campus/support.html", "destination": "/campus/support", "text": "Campus Support" },
+  { "source": "/contact.html", "destination": "/contact", "text": "Contact Us" },
+  { "source": "/branding.html", "destination": "/branding", "text": "OSG Branding and Logos" },
+  { "source": "/newsletter.html", "destination": "/newsletter", "text": "OSG Community Announcements" },
+  { "source": "/covid-19.html", "destination": "/covid-19", "text": "OSG Support for COVID-19 Research" },
+  { "source": "/code-of-conduct.html", "destination": "/code-of-conduct", "text": "OSG Code of Conduct" },
+  { "source": "/institutions.html", "destination": "/institutions", "text": "OSG Institutions" },
+  { "source": "/campus-cyberinfrastructure.html", "destination": "/campus-cyberinfrastructure", "text": "OSG Support for Campus Cyberinfrastructure" },
+  { "source": "/about/open_science_pool/", "destination": "/services/ospool", "text": "Open Science Pool" },
+  { "source": "/about/computation-ideal-for-OSPool/", "destination": "/services/ospool", "text": "Open Science Pool" },
+  { "source": "/about/osdf/", "destination": "/services/osdf", "text": "Open Science Data Federation" },
+  { "source": "/about/team/", "destination": "/team", "text": "The OSG Team" },
+  {
+    "source": "/2024-Nov-pelican-training.html",
+    "destination": "https://docs.google.com/forms/d/e/1FAIpQLSdyqwH6yp584v3Sm7ecFR8fTjLbOrgIIPeAkAdkh39mrVPzJQ/viewform?usp=sf_link",
+    "text": "November 2024 Pelican Training registration link"
+  },
+  {
+    "source": "/2025-ap20-21-migration-page.html",
+    "destination": "https://portal.osg-htc.org/documentation/support_and_training/ap20-21-migration-fall2025/",
+    "text": "2025 OSPool AP20 and AP21 Migration Page"
+  },
+  {
+    "source": "/campus-meet-up-zoom.html",
+    "destination": "https://uwmadison.zoom.us/j/95839550403?pwd=YjIzUFo1blRzcDB2TVAxb2w5ZkwyZz09",
+    "text": "You are being redirected to the OSG Campus Office Hours Zoom"
+  },
+  {
+    "source": "/campus-office-hours-zoom.html",
+    "destination": "https://osg-htc.org/campus-meet-up-zoom.html",
+    "text": "You are being redirected to the OSG Campus Office Hours Zoom"
+  },
+  {
+    "source": "/campus/documentation",
+    "destination": "https://osg-htc.org/campus-docs",
+    "text": "You are being redirected to the OSG Campus Documentation"
+  },
+  {
+    "source": "/cenval-arc-ospool.html",
+    "destination": "https://registry.cilogon.org/registry/co_petitions/start/coef:545",
+    "text": "Enroll in OSPool via COmanage"
+  },
+  {
+    "source": "/David-Swanson-Award-2023.html",
+    "destination": "https://docs.google.com/forms/d/e/1FAIpQLSeN2uwlFsl-dIrnnEllzaD68-ewk1e99nwRB85Q74wqVrX0zw/viewform?usp=sf_link",
+    "text": "You are David Swanson Award Page"
+  },
+  {
+    "source": "/David-Swanson-Award-2024.html",
+    "destination": "https://docs.google.com/forms/d/e/1FAIpQLSfTpZ-w-jM2LBAyXe5rx7eEexT21Gfzuou4VF3429JKxfcC5Q/viewform?usp=sf_link",
+    "text": "You are David Swanson Award Page 2024"
+  },
+  {
+    "source": "/David-Swanson-Award-2025.html",
+    "destination": "https://docs.google.com/forms/d/e/1FAIpQLSfVjmvZKXvqPygtpFO1NkqCBnu2u6Tgq1Q0jhzbaQNDL9IZsg/viewform?usp=dialog",
+    "text": "You are David Swanson Award Page 2025"
+  },
+  {
+    "source": "/David-Swanson-Award-apply.html",
+    "destination": "https://uwmadison.co1.qualtrics.com/jfe/form/SV_02pM2U7xAxDfeNE",
+    "text": "You are David Swanson Award Page 2026"
+  },
+  {
+    "source": "/events/throughput-computing-week-2026/",
+    "destination": "https://osg-htc.org/events/2026/06/09/throughput-computing-week/",
+    "text": "You are being redirected to the HTC26 website"
+  },
+  {
+    "source": "/facilities.html",
+    "destination": "/institutions.html",
+    "text": "You are being redirected to the OSG Institutions page"
+  },
+  {
+    "source": "/htc25.html",
+    "destination": "https://agenda.hep.wisc.edu/event/2297/",
+    "text": "You are being redirected to the HTC25 website"
+  },
+  {
+    "source": "/htc26.html",
+    "destination": "https://agenda.hep.wisc.edu/event/2432/",
+    "text": "You are being redirected to the HTC26 website"
+  },
+  {
+    "source": "/logos.html",
+    "destination": "/branding",
+    "text": "You are being redirected to OSG Branding Guide"
+  },
+  {
+    "source": "/nairr.html",
+    "destination": "https://registry.cilogon.org/registry/co_petitions/start/coef:624",
+    "text": "NAIRR 2026 - OSPool/PATh Enrollment Flow"
+  },
+  {
+    "source": "/NAIRR26-Account-Convert",
+    "destination": "https://uwmadison.co1.qualtrics.com/jfe/form/SV_4VBVncfsSaHWQnk",
+    "text": "NAIRR 2026 Account Conversion Form"
+  },
+  {
+    "source": "/nairr26-account.html",
+    "destination": "https://registry.cilogon.org/registry/co_petitions/start/coef:624",
+    "text": "NAIRR 2026 - Training Ensembles Across NAIRR Pilot Resources - account request flow"
+  },
+  {
+    "source": "/nairr26-slides.html",
+    "destination": "https://docs.google.com/presentation/d/1OV4gpHPQm7WUnbcpOA33o0K6AuO71DUiLAeuWZgnkQg/edit?usp=sharing",
+    "text": "NAIRR 2026 - Training Ensembles Across NAIRR Pilot Resources - Slides"
+  },
+  {
+    "source": "/notebook.html",
+    "destination": "https://notebook.ospool.osg-htc.org/",
+    "text": "Access OSPool Notebooks"
+  },
+  {
+    "source": "/notebooks.html",
+    "destination": "https://notebook.ospool.osg-htc.org/",
+    "text": "Access OSPool NOtebooks"
+  },
+  {
+    "source": "/OfficeHoursSignin.html",
+    "destination": "https://go.wisc.edu/osgofficehourssignin",
+    "text": "Click Here to be Redirected to Office Hours!"
+  },
+  {
+    "source": "/OfficeHoursZoom.html",
+    "destination": "https://go.wisc.edu/osgofficehourszoom",
+    "text": "Click Here to be Redirected to Office Hours!"
+  },
+  {
+    "source": "/osdf",
+    "destination": "https://osg-htc.org/services/osdf",
+    "text": "OSDF"
+  },
+  {
+    "source": "/osdf-map",
+    "destination": "https://map.osg-htc.org/map/iframe?view=OpenScienceDataFederation#45.737115,-90.140436|2",
+    "text": "OSDF Map"
+  },
+  {
+    "source": "/osg2025-orientation.html",
+    "destination": "https://osgfacilitation.setmore.com/classes/0684b9a0-a868-48b0-90f4-1e19ae5e0146",
+    "text": "OSG School 2025 - Orientation Sessions"
+  },
+  {
+    "source": "/ospool",
+    "destination": "https://osg-htc.org/services/open_science_pool",
+    "text": "OSPool Map"
+  },
+  {
+    "source": "/ospool-ace-training.html",
+    "destination": "https://forms.gle/zni7McQTp5ZhYxGr9",
+    "text": "Click Here to be Redirected to OSPOOL ACE training!"
+  },
+  {
+    "source": "/ospool-enroll.html",
+    "destination": "https://registry.cilogon.org/registry/co_petitions/start/coef:211",
+    "text": "Enroll in OSPool via COmanage"
+  },
+  {
+    "source": "/ospool-map",
+    "destination": "https://map.osg-htc.org/map/iframe?view=OSPool#15.737115,-90.140436|3",
+    "text": "OSPool Map"
+  },
+  {
+    "source": "/ospool-quota-increase.html",
+    "destination": "https://uwmadison.co1.qualtrics.com/jfe/form/SV_9Z6Uk7NvMtcHc4C",
+    "text": "Request an OSPool Access Point quota increase"
+  },
+  {
+    "source": "/ospool-survey-2025.html",
+    "destination": "https://uwmadison.co1.qualtrics.com/jfe/form/SV_3K1S1XD19xLA9kq",
+    "text": "OSPool Survey 2025"
+  },
+  {
+    "source": "/projects.html",
+    "destination": "/services/ospool/projects.html",
+    "text": "OSPool Projects"
+  },
+  {
+    "source": "/repro-ml-workshop-fall25-ospool.html",
+    "destination": "https://registry.cilogon.org/registry/co_petitions/start/coef:590",
+    "text": "Enroll in OSPool via COmanage - Reproducible ML Workflows Workshop - Fall 2025"
+  },
+  {
+    "source": "/services/open_science_pool.html",
+    "destination": "/services/ospool/",
+    "text": "OSPool"
+  },
+  {
+    "source": "/services/open_science_pool/institutions.html",
+    "destination": "/services/ospool/institutions.html",
+    "text": "OSPool Institutions"
+  },
+  { "source": "/about/", "destination": "/about/introduction", "text": "About the OSG Consortium" },
+  { "source": "/acknowledging.html", "destination": "/about/acknowledging", "text": "Acknowledging the OSG" },
+  { "source": "/acknowledging", "destination": "/about/acknowledging", "text": "Acknowledging the OSG" }
+]

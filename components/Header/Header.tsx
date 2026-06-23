@@ -9,7 +9,7 @@ import {NavigationItem} from "@/components/Header";
 
 const Header = ({pages} : {pages: NavigationItem[]}) => {
 	return (
-		<AppBar position="sticky" elevation={0}>
+		<AppBar position="sticky" elevation={0} color="secondary">
 			<Container maxWidth="lg">
 				<Box sx={{ display: { xs: 'block', md: 'none' } }}>
 					<MobileHeader pages={pages} />

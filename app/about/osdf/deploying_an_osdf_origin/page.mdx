@@ -1,0 +1,39 @@
+export const metadata = { title: "Deploying an OSDF Origin — OSG Consortium" };
+
+# Deploying an OSDF Origin
+
+Our mental model for an OSDF Origin is that of a filesystem, possibly composed of
+many servers, that is mounted on a host managed via Kubernetes. Both the filesystem
+and that host is the responsibility of the owner institution. The
+[PATh](https://path-cc.io/) team has access
+to that host to instantiate the origin services by deploying a container.
+
+The institution owning the hardware on which the filesystem is implemented is
+responsible for communicating with PATh via the PATh ticketing system what parts
+of the filesystem they want to export into the OSDF, and who should have read/write
+access to it. The owner can change this unilaterally any time, but we request
+notification ideally a few days prior, if possible.
+
+The PATh services team is responsible for operating the origin service as requested.
+This includes communicating the absolute path the owners exported filesystems show
+up in the OSG runtime environment to the institution owning the exported filesystem.
+
+Figure 1 below depicts this architectural arrangement.
+PATh is responsible for services in red. This figure shows an arrangement where
+the actual exported filesystem sits behind an institutional firewall, while the
+Kubernetes host is dual homed, straddling this firewall.
+
+We suggest that the institution owning the filesystem and the Kubernetes host work
+with the
+[National Research Platform (NRP)](https://nationalresearchplatform.org/)
+project to operate the Kubernetes host. This
+is by far the least effort way forward for the institution. We are happy to introduce
+you.
+
+If the institution insists to deploy and operate the origin themselves, we can provide
+appropriate RPMs. However, we strongly suggest to leave operations of this service to
+the experts in the PATh operations team.
+
+![Map of the Open Science Data Federation](/images/OSDF_Image.png)
+
+_Figure 1: Depicting the architectural arrangement of the OSDF._

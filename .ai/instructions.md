@@ -56,6 +56,16 @@ Since this is a static site, Server Components are primarily used during the bui
     - If a UI pattern is reused more than once.
     - If a section of a page is complex or self-contained.
     - If it improves readability or testability.
+- **Component Conventions:**
+    - Each reusable component lives in its own PascalCase directory with a barrel `index.ts` handling exports. Sub-components not used outside the parent are allowed in that directory.
+    - Page-local components (used on one page) can sit in a `_components` directory next to the page. The leading underscore is Next.js's private-folder convention — it excludes the folder from routing. These can be lightweight flat files; they don't need the full directory+barrel treatment.
+    - Single-file component = one `Component.tsx` inside its directory (e.g. `Button/Button.tsx` + `Button/index.ts`). Define the props type inline at the top of `Component.tsx`; don't create a separate types file for one consumer with small types.
+    - Composed component (multiple sub-components in one directory): put shared types in a colocated `Component.types.ts` that the parent and all sub-components import from. One source of truth, and it avoids circular imports between parent and children.
+    - Colocate types with the component that uses them. Only hoist a type to a shared location when something outside the component's own directory needs it.
+    - Always expose public types through the directory's `index.ts` (e.g. `export type { ButtonProps } from './Button'`), so consumers import from `@/components/Button` and never reach into internal files.
+    - Keep barrels scoped to the component directory. Avoid large feature- or app-level barrels that re-export everything — they hurt tree-shaking and dev compile times in Next.js.
+    - Promote to a shared location only when justified: a feature-level `types.ts` for types shared across a feature, and `src/types/` for app-wide domain models (`User`, `Product`, etc.). Don't bury cross-cutting types inside a single component.
+    - Decision rule: inline → `*.types.ts` → feature/shared types, escalating one step only when the number of consumers grows past the current scope.
 - **Naming Conventions:**
     - Use `PascalCase` for component files and exports (e.g., `UserCard.tsx`).
     - Use `camelCase` for hooks (e.g., `useUser.ts`).
