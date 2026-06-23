@@ -16,6 +16,10 @@ export const GRACC_ENDPOINT = 'https://gracc.opensciencegrid.org/q';
 export const GRACC_SUMMARY_INDEX = 'gracc.osg.summary';
 
 const REQUEST_TIMEOUT_MS = 15000;
+const MAX_ATTEMPTS = 4;
+const RETRY_BASE_DELAY_MS = 500;
+
+const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
 interface ElasticTermsAgg {
   buckets: { key: string; doc_count: number }[];
@@ -59,31 +63,65 @@ export interface DatedOspoolOverview extends OspoolOverview {
   date: Date;
 }
 
-/** Minimal Elasticsearch `_search` helper against a given index/endpoint. */
+/**
+ * Minimal Elasticsearch `_search` helper against a given index/endpoint.
+ *
+ * Retries transient failures (network errors, timeouts / ETIMEDOUT, and 5xx
+ * responses) with exponential backoff + jitter. A static build issues hundreds
+ * of these queries, so without retries a single slow or dropped connection
+ * (common from CI runners) would abort the whole build. Deterministic 4xx
+ * responses are not retried.
+ */
 async function elasticSearch<TResponse = unknown>(
   body: Record<string, unknown>,
   index: string = ADSTASH_SUMMARY_INDEX,
   endpoint: string = ADSTASH_ENDPOINT
 ): Promise<TResponse> {
-  const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS);
+  let lastError: unknown;
 
-  try {
-    const response = await fetch(`${endpoint}/${index}/_search`, {
-      method: 'POST',
-      body: JSON.stringify(body),
-      headers: { 'Content-Type': 'application/json' },
-      signal: controller.signal,
-    });
+  for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS);
 
-    if (!response.ok) {
-      throw new Error(`Invalid response from ${endpoint}: ${response.status}`);
+    try {
+      const response = await fetch(`${endpoint}/${index}/_search`, {
+        method: 'POST',
+        body: JSON.stringify(body),
+        headers: { 'Content-Type': 'application/json' },
+        signal: controller.signal,
+      });
+
+      if (response.ok) {
+        return await response.json();
+      }
+      // 4xx is deterministic — don't waste retries on it; 5xx is transient.
+      if (response.status < 500) {
+        throw Object.assign(
+          new Error(`Invalid response from ${endpoint}: ${response.status}`),
+          { fatal: true }
+        );
+      }
+      throw new Error(`Server error ${response.status} from ${endpoint}`);
+    } catch (error) {
+      lastError = error;
+      const fatal =
+        error instanceof Error && (error as { fatal?: boolean }).fatal === true;
+      if (fatal || attempt === MAX_ATTEMPTS) throw error;
+
+      const delay = Math.round(
+        RETRY_BASE_DELAY_MS * 2 ** (attempt - 1) + Math.random() * 250
+      );
+      console.warn(
+        `[adstash] request failed (attempt ${attempt}/${MAX_ATTEMPTS}), retrying in ${delay}ms: ` +
+          `${error instanceof Error ? error.message : String(error)}`
+      );
+      await sleep(delay);
+    } finally {
+      clearTimeout(timeout);
     }
-
-    return await response.json();
-  } finally {
-    clearTimeout(timeout);
   }
+
+  throw lastError;
 }
 
 const termsAgg = (field: string) => ({ terms: { field, size: 10000 } });
